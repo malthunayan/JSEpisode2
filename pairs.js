@@ -19,6 +19,24 @@
 ****************************************************************/
 function pairs(names) {
   // Your code goes here
+  if (typeof names === 'undefined' || names.length === 0) {
+    return []
+  } else if (names.length === 2) {
+    return [[names.getRandom(), names.getRandom()]]
+  }
+
+  const pair = [];
+  while (names.length) {
+    if (names.length%2 !== 0) {
+      pair.push([names.getRandom(), names.getRandom()]);
+      if (names.length === 1) {
+      pair.push([names.getRandom()]);
+    }
+    } else {
+      pair.push([names.getRandom(), names.getRandom()]); 
+    }
+  }
+  return pair
 }
 
 module.exports = pairs;
